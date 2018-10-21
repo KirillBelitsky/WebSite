@@ -1,0 +1,228 @@
+a{
+	text-decoration: none;
+	transition: 0.2s ease-out;
+}
+ body {
+ 	margin: 0px; 
+ }
+.headers{
+	display: flex;
+	padding: 10px;
+	background-color: #fff;
+	height: 2em;
+	width: 95%;
+	justify-content: space-between;
+}
+
+.headers .container {
+	width: 95%;
+	margin-left: 25px;
+	margin-right: 25px;
+	}
+
+.container div{
+	display: inline-block;
+
+}
+.container .logo {
+	float: left;
+	font-size: 30px;
+	margin-top: 0px;
+	margin-left: 150px;
+}
+
+.container .logo a{
+	color: #336BAB;
+}
+
+.container .panel {
+	float: right;
+	margin-top: -10px;
+}
+
+.container .panel .top_menu ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.container .panel .top_menu li {
+	display: inline;
+	margin: 40px;
+	font-size: 20px;
+	margin-left: 40px;
+}
+
+.container .panel .top_menu li a{
+	color: #336BAB;
+}
+
+.container .panel .top_menu li:last-child {
+	margin-right: 100px;
+}
+
+.container .panel .top_menu li a:hover {
+	color:#FF8000;
+}
+
+.container #window {
+
+}
+
+.main{
+	width: 100%;
+	height: 57em;
+	background-color: #061634;
+}
+
+
+
+
+.container-footer{
+	display: flex;
+	font-size: 14px;
+	background-color: #242424;
+	color: #fff;
+}
+
+.container-footer .row {
+	width: 100%;
+	margin:15px;
+}
+
+.container-footer .row div {
+	display: inline-block;  /* дивы в ряд ставит */
+}
+
+
+.container-footer .row .footer-column {
+	float: left;
+	margin-left:100px;
+	margin-right:50px;
+	margin-top:25px;
+	margin-bottom: 25px;
+	justify-content: space-between;
+}
+.container-footer .row .footer-column:last-child{
+	float: right;
+}
+
+
+.container-footer .row .footer-column .footer_footer-column_logo {   
+	margin-top: 125px;
+	font-size: 42px;
+}
+
+.container-footer .row .footer-column .footer_my_profils {
+	font-size: 20px;
+	letter-spacing: 1.5px;
+	margin-top: 60px;
+}
+
+.container-footer .row .footer-column .footer_social_icons .fa-vk {
+	font-size: 20px;
+	color:#fff;
+	margin-right: 25px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	margin-left: 50px;
+}
+
+.container-footer .row .footer-column .footer_social_icons .fa-odnoklassniki {
+	font-size: 20px;
+	margin-right: 25px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color:#fff;
+}
+/*  кнопка "Связаться Вк" */
+.container-footer .row .footer-column .button_href_vk .button_href_vk_ss{
+	font-size: 22px;
+	font-weight: 700;
+	display: inline-block;
+	border-width: 2px;
+	border-color: #fff;
+	border-style: solid;
+	border-radius: 50px;
+	color:#fff;
+	text-transform: uppercase;
+	letter-spacing: 1.6px;
+	padding-top:8px;
+	padding-bottom: 8px;
+	padding-left: 23px;
+	padding-right: 23px;
+	margin-bottom: 13px;
+}
+
+.container-footer .row .footer-column .button_href_vk .button_href_vk_ss:hover {
+	color:#242424;
+	background-color: #434343;
+}
+
+.container-footer .row .footer-column .footer_feadback .footer_feadback_svyaz {
+	font-size: 23px;
+}
+
+
+/* поле отзыва в футере */
+.container-footer .row .footer-column .footer_feadback .footer_form_email {
+	height:50px;
+  	width:175%;
+  	border-radius:3px;
+  	border:rgba(0,0,0,.3) 2px solid;
+  	box-sizing:border-box;
+	font-family: 'Open Sans', sans-serif;
+	font-size:18px; 
+  	padding:10px;
+  	background: rgba(255, 255, 255, 0.4); 
+ 	margin-bottom:30px; 
+}
+
+.container-footer .row .footer-column .footer_feadback .footer_form_text{
+	background: rgba(255, 255, 255, 0.4); 
+    width:100%;
+    height: 120px;
+    border:rgba(0,0,0,.3) 2px solid;
+    box-sizing:border-box;
+    -moz-border-radius: 3px;
+    font-size:18px;
+    font-family: 'Open Sans', sans-serif;
+    -webkit-border-radius: 3px;
+    border-radius: 3px; 
+    display:block;
+    padding:10px;
+    margin-bottom:30px;
+    overflow:hidden;
+
+}
+/* при нажатии на поля  */
+.container-footer .row .footer-column .footer_feadback .footer_form_text:focus,
+.container-footer .row .footer-column .footer_feadback .footer_form_email:focus{
+  outline:none;
+   border:rgba(24,149,215,1) 2px solid;
+   color: #ccc;
+}
+/* change color in phaceholder */
+ .container-footer .row .footer-column .footer_feadback .footer_form_text::-webkit-input-placeholder,  
+ .container-footer .row .footer-column .footer_feadback .footer_form_email::-webkit-input-placeholder{
+    color: #ccc;
+   } 
+
+.container-footer .row .footer-column .footer_feadback .footer_form_submit {
+	height:50px;
+  width:100%;
+  border-radius:3px;
+  border:rgba(0,0,0,.3) 0px solid;
+  box-sizing:border-box;
+  padding:10px;
+  background:#90c843;
+  color:#FFF;
+  font-family: 'Open Sans', sans-serif;  
+  font-weight:400;
+  font-size: 16pt;
+  transition:background .4s;
+  cursor:pointer;
+}
+
+.container-footer .row .footer-column .footer_feadback .footer_form_submit:hover {
+ background:#80b438;
+}
