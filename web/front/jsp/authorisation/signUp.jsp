@@ -25,7 +25,6 @@
             <div class="panel">
                 <ul class="top_menu">
                     <li><a class="top-menu-item" href="/front/jsp/autorisation/logIn.jsp">Войти</a></li>
-
                     <li><a href="#footers">О нас</a></li>
                 </ul>
             </div>
@@ -44,28 +43,28 @@
                     </div>
                     <div class="panel_form_group_data">
                         <div class="col-mb-12">
-                            <input type="radio" name="Gender_M" id="Gender_M" value="M">
+                            <input type="radio" name="sex" id="Gender_M" value="M">
                             <label for="Gender_M">Мужской</label>
-                            <input type="radio" name="Gender_M" id="Gender_W" value="W">
+                            <input type="radio" name="sex" id="Gender_W" value="W">
                             <label for="Gender_W">Женский</label>
                         </div>
                     </div>
                     <div class="col_group">
                         <div class="col_group-mb-12">
                             <div class="wrapper">
-                                <input type="text" class="input_data" name="Last_name" autocomplete="off" required="true" placeholder="Фамилия" style="color: #555">
+                                <input type="text" class="input_data" name="secondName" autocomplete="off" required="true" placeholder="Фамилия" style="color: #555">
                             </div>
                             <p class="text_details">Латинскими буквами,как в паспорте</p>
                         </div>
                         <div class="col_group-mb-12">
                             <div class="wrapper">
-                                <input type="text" class="input_data" name="First_name" autocomplete="off" required="true" placeholder="Имя" style="color: #555">
+                                <input type="text" class="input_data" name="firstName" autocomplete="off" required="true" placeholder="Имя" style="color: #555">
                             </div>
                             <p class="text_details">Латинскими буквами,как в паспорте</p>
                         </div>
                         <div class="col_group-mb-12">
                             <div class="wrapper">
-                                <input type="date" name="date" autocomplete="off" class="date" placeholder=" " style="color: #555">
+                                <input type="date" name="datetime" autocomplete="off" class="date" placeholder=" " style="color: #555">
 
                             </div>
                         </div>
@@ -78,7 +77,7 @@
                     <div class="col_group">
                         <div class="col_group-mb-12">
                             <div class="wrapper ui-link dropdown">
-                                <input type="text" class="input_data" name="Appelation" autocomplete="off"  placeholder="Серия и номер паспорта" style="color: #555">
+                                <input type="text" class="input_data" name="passport" autocomplete="off"  placeholder="Серия и номер паспорта" style="color: #555">
                             </div>
                         </div>
                     </div>
@@ -101,7 +100,7 @@
                         </div>
                         <div class="col_group-mb-12">
                             <div class="wrapper ui-link dropdown">
-                                <input type="Email" class="input_data" name="Email" autocomplete="off" placeholder="Email" style="color: #555">
+                                <input type="Email" class="input_data" name="email" autocomplete="off" placeholder="Email" style="color: #555">
                             </div>
                         </div>
                     </div>
@@ -124,12 +123,12 @@
                         </div>
                         <div class="col_group-mb-12">
                             <div class="wrapper ui-link dropdown">
-                                <input type="text" min="1" max="4" class="input_data" name="post_index" autocomplete="off" placeholder="Почтовый индекс" style="color: #555">
+                                <input type="text" min="1" max="4" class="input_data" name="indexCity" autocomplete="off" placeholder="Почтовый индекс" style="color: #555">
                             </div>
                         </div>
                         <div class="col_group-mb-12">
                             <div class="wrapper ui-link dropdown">
-                                <textarea class="data_about_adress" autocomplete="off" placeholder="Адрес" style="color: #555" rows="4" cols="25"></textarea>
+                                <textarea class="data_about_adress" autocomplete="off" name="adress" placeholder="Адрес" style="color: #555" rows="4" cols="25"></textarea>
                             </div>
                         </div>
                     </div>

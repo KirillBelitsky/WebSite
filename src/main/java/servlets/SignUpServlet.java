@@ -29,18 +29,27 @@ public class SignUpServlet extends HttpServlet {
     }
 
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException,ServletException{
+
+        User user=fillingUser(req);
         try {
             UserDAO userDAO = new UserMySQLDAO();
 
-            ArrayList<User> list=userDAO.getUsers();
+            userDAO.addUser(user);
 
-            for (User x:list) {
-                System.out.println(x.toString());
-            }
+
         }catch (SQLException e){}
-        catch (PropertyVetoException e){};
-
-        RequestDispatcher rd = req.getRequestDispatcher("/front/jsp/first.jsp");
+        catch (PropertyVetoException ex){}
+        RequestDispatcher rd = req.getRequestDispatcher("front/jsp/authorisation/logIn.jsp");
         rd.forward(req,resp);
+    }
+
+    private User fillingUser(HttpServletRequest request){
+
+        User user = new User(request.getParameter("sex"),request.getParameter("firstName"),
+                request.getParameter("secondName"), request.getParameter("password"),request.getParameter("numberPhone"),
+                request.getParameter("email"),request.getParameter("passport"),request.getParameter("city"),
+                request.getParameter("indexCity"),request.getParameter("adress"),request.getParameter("datetime"));
+
+        return user;
     }
 }

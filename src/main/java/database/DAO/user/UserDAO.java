@@ -12,5 +12,5 @@ public interface UserDAO {
 
     ArrayList<User> getUsers(User user);
 
-    boolean addUsers(User... users);
+    boolean addUser(User user);
 }

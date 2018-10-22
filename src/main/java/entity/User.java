@@ -4,43 +4,65 @@ import java.util.Date;
 
 public class User {
     private int id;
+    private String sex;
     private String firstName;
     private String secondName;
-    private Date date;
-    private int phone;
+    private String  date;
+    private String phone;
     private String password;
     private String email;
     private String passport;
     private String gender;
     private String city;
     private String postIndex;
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", secondName='" + secondName + '\'' +
-                ", date=" + date +
-                ", phone=" + phone +
-                ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", passport='" + passport + '\'' +
-                ", gender='" + gender + '\'' +
-                ", city='" + city + '\'' +
-                ", postIndex='" + postIndex + '\'' +
-                ", adress='" + adress + '\'' +
-                '}';
-    }
-
     private String adress;
 
-
-    public User(int id,String firstName,String secondName,String city) {
+    public User(int id,String sex,String firstName,String secondName,String password,
+     String phoneNumber,String email,String passport,String city,String index,String adress,String datetime){
+        this.id=id;
         this.firstName = firstName;
         this.secondName = secondName;
         this.city = city;
+        this.adress=adress;
+        this.sex=sex;
+        this.password=password;
+        this.passport=passport;
+        this.postIndex=index;
+        //this.date=datetime;
+        this.email=email;
+        this.phone=phoneNumber;
+        this.adress=adress;
+    }
+    public User(String sex,String firstName,String secondName,String password,
+                String phoneNumber,String email,String passport,String city,String index,String adress,String datetime){
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.city = city;
+        this.adress=adress;
+        this.sex=sex;
+        this.password=password;
+        this.passport=passport;
+        this.postIndex=index;
+        //this.date=datetime;
+        this.email=email;
+        this.phone=phoneNumber;
+        this.adress=adress;
+    }
 
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
     public String getFirstName() {
@@ -59,19 +81,19 @@ public class User {
         this.secondName = secondName;
     }
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
-    public int getPhone() {
+    public String getPhone() {
         return phone;
     }
 
-    public void setPhone(int phone) {
+    public void setPhone(String phone) {
         this.phone = phone;
     }
 
@@ -129,5 +151,24 @@ public class User {
 
     public void setAdress(String adress) {
         this.adress = adress;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", sex='" + sex + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", secondName='" + secondName + '\'' +
+                ", date=" + date +
+                ", phone=" + phone +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", passport='" + passport + '\'' +
+                ", gender='" + gender + '\'' +
+                ", city='" + city + '\'' +
+                ", postIndex='" + postIndex + '\'' +
+                ", adress='" + adress + '\'' +
+                '}';
     }
 }
