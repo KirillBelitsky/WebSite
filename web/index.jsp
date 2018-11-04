@@ -23,13 +23,16 @@
       <div class="logo">
         <a href="/">LOGO</a>
       </div>
-      <div id="window">
-
-      </div>
       <div class="panel">
         <ul class="top_menu">
+            <%if(session.getAttribute("user")==null){%>
           <li><a class="top-menu-item" href="front/jsp/authorisation/logIn.jsp">Войти</a></li>
           <li><a href="front/jsp/authorisation/signUp.jsp">Регистрация</a></li>
+            <%}%>
+            <%if(session.getAttribute("user")!=null){%>
+            <li><a class="top-menu-item" href="front/jsp/withAuthorisation/ownRoom.jsp"/>
+                ${name}</li>
+            <%}%>
           <li><a href="#footers">О нас</a></li>
         </ul>
       </div>
@@ -37,6 +40,9 @@
   </div>
 </header>
 <div class="main">
+    <form action="/MyServlet" method="post">
+        <input type="submit">
+    </form>
 </div>
 <footer>
   <div id="footers">
@@ -58,7 +64,7 @@
         <div class="footer-column">
           <div class="footer_feadback">
             <p class="footer_feadback_svyaz">Если хотите с нами связться,напишите нам</p>
-            <form class="footer_form" method="post" action="MyServlet">
+            <form class="footer_form" method="post" action="">
               <div class="footer-form-group">
                 <input type="email" class="footer_form_email" name="footer_form_email" placeholder="Email">
               </div>

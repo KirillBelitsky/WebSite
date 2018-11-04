@@ -17,6 +17,8 @@ public class User {
     private String postIndex;
     private String adress;
 
+    public User(){}
+
     public User(int id,String sex,String firstName,String secondName,String password,
      String phoneNumber,String email,String passport,String city,String index,String adress,String datetime){
         this.id=id;

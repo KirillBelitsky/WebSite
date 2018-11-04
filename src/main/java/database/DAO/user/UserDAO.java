@@ -6,7 +6,9 @@ import java.util.ArrayList;
 
 public interface UserDAO {
 
-    boolean findUser(User user);
+    boolean findUserTrue(User user);
+
+    User findUser(User user);
 
     ArrayList<User> getUsers();
 
