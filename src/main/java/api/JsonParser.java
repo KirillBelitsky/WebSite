@@ -1,7 +1,7 @@
 package api;
 
 import entity.Ticket;
-import org.json.simple.JSONArray;
+
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -12,7 +12,7 @@ import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Iterator;
+
 
 public class JsonParser {
 
@@ -31,7 +31,6 @@ public class JsonParser {
             String resp = convertStreamToString(new BufferedReader(new InputStreamReader(url.openStream())));
 
             JSONObject jo = (JSONObject) new JSONParser().parse(resp);
-            String currency = (String) jo.get("currency");
             JSONObject data = (JSONObject) jo.get("data");
             JSONObject hkt = (JSONObject) data.get("HKT");
 

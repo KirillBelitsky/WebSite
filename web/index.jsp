@@ -25,7 +25,7 @@
       </div>
       <div class="panel">
         <ul class="top_menu">
-            <%if(session.getAttribute("user")==null){%>
+            <%if(session.getAttribute("user") == null){%>
           <li><a class="top-menu-item" href="front/jsp/authorisation/logIn.jsp">Войти</a></li>
           <li><a href="front/jsp/authorisation/signUp.jsp">Регистрация</a></li>
             <%}%>
@@ -40,7 +40,7 @@
   </div>
 </header>
 <div class="main">
-    <form action="/MyServlet" method="post">
+    <form action="MyServlet" method="post">
         <input type="submit">
     </form>
 </div>

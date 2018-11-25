@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(urlPatterns = "/front/jsp/withAuthorisation/")
+@WebFilter(urlPatterns = "/front/jsp/pages/ownRoom.jsp")
 public class SecurityFilter implements Filter {
 
     @Override

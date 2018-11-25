@@ -33,6 +33,6 @@ public class MyServlet extends HttpServlet {
 
         request.setAttribute("tickets",tickets);
 
-        response.sendRedirect("/front/jsp/pages/bookingTickets.jsp");
+        response.sendRedirect("front/jsp/pages/bookingTickets.jsp");
     }
 }

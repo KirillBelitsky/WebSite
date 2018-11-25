@@ -31,14 +31,16 @@ public class SignUpServlet extends HttpServlet {
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException,ServletException{
 
         User user=fillingUser(req);
+
         try {
             UserDAO userDAO = new UserMySQLDAO();
 
             userDAO.addUser(user);
-
-
         }catch (SQLException e){}
-        catch (PropertyVetoException ex){}
+        catch (PropertyVetoException ex){
+            ex.printStackTrace();
+        }
+
         RequestDispatcher rd = req.getRequestDispatcher("front/jsp/authorisation/logIn.jsp");
         rd.forward(req,resp);
     }
