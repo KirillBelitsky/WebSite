@@ -30,8 +30,8 @@
           <li><a href="front/jsp/authorisation/signUp.jsp">Регистрация</a></li>
             <%}%>
             <%if(session.getAttribute("user")!=null){%>
-            <li><a class="top-menu-item" href="front/jsp/withAuthorisation/ownRoom.jsp"/>
-                ${name}</li>
+            <><a class="top-menu-item" href="front/jsp/pages/ownRoom.jsp">
+              ${name}</a></li>
             <%}%>
           <li><a href="#footers">О нас</a></li>
         </ul>
@@ -64,7 +64,7 @@
         <div class="footer-column">
           <div class="footer_feadback">
             <p class="footer_feadback_svyaz">Если хотите с нами связться,напишите нам</p>
-            <form class="footer_form" method="post" action="">
+            <form class="footer_form" method="post" action="/MyServlet">
               <div class="footer-form-group">
                 <input type="email" class="footer_form_email" name="footer_form_email" placeholder="Email">
               </div>
