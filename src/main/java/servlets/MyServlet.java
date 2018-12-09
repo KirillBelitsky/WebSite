@@ -1,6 +1,5 @@
 package servlets;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,8 +8,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Date;
 
-import api.JsonParser;
+import api.Parser.JsonParserTicket;
 import entity.Ticket;
 
 
@@ -29,10 +29,19 @@ public class MyServlet extends HttpServlet {
 
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        ArrayList<Ticket> tickets = new JsonParser().parse();
+        String cityFrom = request.getParameter("city_from");
+        String cityTo =  request.getParameter("city_to");
+        String departure_at = request.getParameter("departure_at");
+        String return_at =request.getParameter("return_at");
 
-        request.setAttribute("tickets",tickets);
 
+        ArrayList<?> tickets = new JsonParserTicket().parse(cityFrom,cityTo,departure_at,return_at).getList();
+        if(tickets!=null)
+            System.out.println(tickets.toString());
+        HttpSession session = request.getSession();
+        session.setAttribute("tickets",tickets);
+//        request.setAttribute("tickets",tickets);
+//        ArrayList<Ticket> tickets1 = (ArrayList<Ticket>) request.getParameter("tickets");
         response.sendRedirect("front/jsp/pages/bookingTickets.jsp");
     }
 }
