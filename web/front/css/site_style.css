@@ -105,9 +105,6 @@ input[type=text]{
 	position: relative;
 }
 
-.main .book .page_button .main_forms{
-	justify-content: space-between;
-}
 
 .main .book .page_button .main_forms .avia_places{
 	display: flex;
@@ -265,7 +262,7 @@ input[type=text]{
 /* поле отзыва в футере */
 .container-footer .row .footer-column .footer_feadback .footer_form_email {
 	height:50px;
-	width:175%;
+	width:200%;
 	border-radius:3px;
 	border:rgba(0,0,0,.3) 2px solid;
 	box-sizing:border-box;

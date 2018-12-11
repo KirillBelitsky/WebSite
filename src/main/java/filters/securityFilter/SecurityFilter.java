@@ -22,6 +22,8 @@ public class SecurityFilter implements Filter {
         HttpSession session = req.getSession();
 
         if(session.getAttribute("user")==null){
+            req.setAttribute("url","/front/jsp/pages/ownRoom.jsp");
+
             RequestDispatcher dispatcher = request.getServletContext()
                     .getRequestDispatcher("/front/jsp/authorisation/logIn.jsp");
             dispatcher.forward(req,resp);

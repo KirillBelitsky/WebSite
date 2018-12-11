@@ -8,10 +8,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Date;
 
 import api.Parser.JsonParserTicket;
-import entity.Ticket;
 
 
 @WebServlet(name="MyServlet",urlPatterns = "/MyServlet")
@@ -38,10 +36,10 @@ public class MyServlet extends HttpServlet {
         ArrayList<?> tickets = new JsonParserTicket().parse(cityFrom,cityTo,departure_at,return_at).getList();
         if(tickets!=null)
             System.out.println(tickets.toString());
+
         HttpSession session = request.getSession();
         session.setAttribute("tickets",tickets);
-//        request.setAttribute("tickets",tickets);
-//        ArrayList<Ticket> tickets1 = (ArrayList<Ticket>) request.getParameter("tickets");
-        response.sendRedirect("front/jsp/pages/bookingTickets.jsp");
+
+        request.getRequestDispatcher("front/jsp/pages/bookingTickets.jsp").forward(request,response);
     }
 }

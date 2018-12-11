@@ -37,8 +37,12 @@ public class LogInServlet extends HttpServlet {
                 httpSession.setAttribute("status","user");
                 httpSession.setAttribute("user",userDAO.findUser(user).getEmail());
                 httpSession.setAttribute("name",userDAO.findUser(user).getSecondName() + userDAO.findUser(user).getFirstName());
-                httpSession.setAttribute("phone",userDAO.findUser(user).getPhone());
+                httpSession.setAttribute("phone","+375"+userDAO.findUser(user).getPhone());
                 httpSession.setAttribute("country","Belarus," + userDAO.findUser(user).getCity());
+                System.out.println(req.getParameter("url"));
+
+                if(req.getParameter("url")!=null)
+                    resp.sendRedirect(req.getParameter("url"));
 
                 resp.sendRedirect("/index.jsp");
             }
