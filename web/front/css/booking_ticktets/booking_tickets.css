@@ -1,0 +1,163 @@
+a{
+    text-decoration: none;
+    transition: 0.2s ease-out;
+}
+p{
+    color:rgb(0,0,0);
+}
+body {
+    margin: 0px;
+}
+
+button:active{
+    padding: 0px;
+}
+
+input[type=text]{
+    font-size: 20px;
+}
+
+.headers{
+    display: flex;
+    padding: 10px;
+    background-color: #fff;
+    height: 2em;
+    width: 95%;
+    justify-content: space-between;
+}
+
+.headers .container {
+    width: 95%;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.container div{
+    display: inline-block;
+
+}
+.container .logo {
+    float: left;
+    font-size: 30px;
+    margin-top: 0px;
+    margin-left: 150px;
+}
+
+.container .logo a{
+    color: #336BAB;
+}
+
+.container .panel {
+    float: right;
+    margin-top: -10px;
+}
+
+.container .panel .top_menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.container .panel .top_menu li {
+    display: inline;
+    margin: 40px;
+    font-size: 20px;
+    margin-left: 40px;
+}
+
+.container .panel .top_menu li a{
+    color: #336BAB;
+}
+
+.container .panel .top_menu li:last-child {
+    margin-right: 100px;
+}
+
+.container .panel .top_menu li a:hover {
+    color:#FF8000;
+}
+
+.main{
+    width: 100%;
+    height: 57em;
+    background-color: #05263f;
+}
+
+.main .contr{
+    margin-right: 128px;
+    margin-left:128px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-bottom: 5px;
+}
+
+.main .contr .title_booking{
+    padding-top: 20px;
+    text-align: center;
+}
+
+.main .contr .form_ticket{
+    padding-right: 100px;
+    padding-left: 100px;
+}
+
+.main .contr .ticket{
+    display: flex;
+    padding-top: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+    border:solid;
+    border-radius:8px;
+    background: rgba(255,255,255, 0.2);
+}
+
+.main .contr .ticket .row{
+    display:inline-flex;
+    padding: 5px 5px 5px 5px;
+    width: 100%;
+    justify-content:space-around;
+}
+
+
+.main .contr .ticket .row .column{
+    padding-top: 5px;
+    margin-left: 25px;
+    padding-bottom: 5px;
+    margin-right: 25px;
+    max-height: 200px;
+    max-width: 250px;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.main .contr .ticket .row .column:last-child{
+    width: 156px;
+}
+
+.main .contr .ticket .row .column .column_2, .column_price{
+    padding-bottom: 5px;
+    display: flex;
+}
+
+.main .contr .ticket .row .column .column_button{
+    text-align: center;
+    padding: 5px 5px 5px 5px;
+}
+
+.main .contr .ticket .row .column .column_button .form_submit{
+    background-color: rgb(255,104,0);
+    width: 100%;
+    max-width:156%;
+    height: 80px;
+    border:rgb(255,104,0) 2px solid;
+    box-sizing:border-box;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background .4s;
+    font-size: 18px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.main .contr .ticket .row .column .column_button .form_submit:hover{
+    background-color: #D66F20;
+}
