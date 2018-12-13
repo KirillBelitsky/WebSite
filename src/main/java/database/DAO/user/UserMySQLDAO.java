@@ -12,10 +12,10 @@ public class UserMySQLDAO implements UserDAO {
 
     Singleton singleton = Singleton.getInstance();
 
-    private static final String GET_USERS = "SELECT * FROM Web_Site.Users";
     private static final String ADD_USER = "INSERT INTO Web_Site.Users (sex,firstName,secondName," +
             "password,phoneNumber,email,numberPasport,city,cityIndex,adress,datetime) VALUES ";
     private static final String Find_User = "SELECT * FROM Web_Site.Users WHERE ";
+    private static final String GET_USERS_ID = "SELECT * FROM Web_Site.Users WHERE ";
 
     public UserMySQLDAO() throws IOException, SQLException, PropertyVetoException {
 
@@ -65,37 +65,31 @@ public class UserMySQLDAO implements UserDAO {
     }
 
 
-    public ArrayList<User> getUsers() {
-
-        ArrayList<User> list = new ArrayList<>();
-
-        try  {
-            Connection connection = singleton.getConnection();
-            PreparedStatement statement = connection.prepareStatement(GET_USERS);
-            ResultSet result = statement.executeQuery();
-            while (result.next()) {
-                list.add(new User(result.getInt("id"), result.getString("sex"), result.getString("FirstName"), result.getString("SecondName"),
-                        result.getString("password"), result.getString("phoneNumber"), result.getString("email"), result.getString("numberPasport"),
-                        result.getString("city"), result.getString("cityIndex"), result.getString("adress"), result.getString("datetime")));
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return list;
-    }
-
-
-    public ArrayList<User> getUsers(User user) {
-        return null;
-    }
-
+//    public ArrayList<User> getUsers() {
+//
+//        ArrayList<User> list = new ArrayList<>();
+//
+//        try  {
+//            Connection connection = singleton.getConnection();
+//            PreparedStatement statement = connection.prepareStatement(GET_USERS);
+//            ResultSet result = statement.executeQuery();
+//            while (result.next()) {
+//                list.add(new User(result.getInt("id"), result.getString("sex"), result.getString("FirstName"), result.getString("SecondName"),
+//                        result.getString("password"), result.getString("phoneNumber"), result.getString("email"), result.getString("numberPasport"),
+//                        result.getString("city"), result.getString("cityIndex"), result.getString("adress"), result.getString("datetime")));
+//            }
+//        } catch (SQLException e) {
+//            e.printStackTrace();
+//        }
+//        return list;
+//    }
 
     public boolean addUser(User user) {
 
         StringBuilder query = new StringBuilder();
 
         query.append(String.format("('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s');",
-                user.getSex(), user.getFirstName(), user.getSecondName(), user.getPassword(),"+375"+user.getPhone(),
+                user.getSex(), user.getFirstName(), user.getSecondName(), user.getPassword(),user.getPhone(),
                 user.getEmail(), user.getPassport(), user.getCity(), user.getPostIndex(), user.getAdress(), user.getDate()));
 
         try{
@@ -106,6 +100,23 @@ public class UserMySQLDAO implements UserDAO {
         } catch (SQLException e) {
             System.out.println("User was not added!");
             return false;
+        }
+    }
+
+    public int getUser_Id(User user){
+        StringBuilder query = new StringBuilder();
+        query.append(String.format("email='%s' AND password='%s';", user.getEmail(), user.getPassword()));
+
+        try{
+            Connection connection = singleton.getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement(GET_USERS_ID + query);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            return Integer.parseInt(resultSet.getString("id_user"));
+
+        }catch (SQLException e){
+            e.printStackTrace();
+            return -1;
         }
     }
 }

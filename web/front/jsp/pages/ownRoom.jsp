@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="front/css/private_office/private_office.css">
+    <link rel="stylesheet" type="text/css" href="/front/css/private_office/private_office.css">
     <meta charset="utf-8">
     <meta name="keywords" content="Личный кабинет,заказ билетов,авиабилеты" >
     <title>Личный кабинет</title>
@@ -17,7 +17,7 @@
 <body>
 <header>
     <div class="headers">
-        <div class="container">
+        <div class="container">r
             <div class="logo">
                 <a href="/index.jsp">LOGO</a>
             </div>
@@ -46,7 +46,7 @@
                     </tr>
                     <tr class="personal_info_list_row">
                         <th class="personal-info-list_cell_personal-info-list_cell__key">Email</th>
-                        <th class="personal-info-list_cell_personal-info-list_cell__value">${user}</th>
+                        <th class="personal-info-list_cell_personal-info-list_cell__value">${email}</th>
                     </tr>
                     <tr class="personal_info_list_row">
                         <th class="personal-info-list_cell_personal-info-list_cell__key">Номер телефона</th>

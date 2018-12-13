@@ -10,9 +10,7 @@ public interface UserDAO {
 
     User findUser(User user);
 
-    ArrayList<User> getUsers();
-
-    ArrayList<User> getUsers(User user);
-
     boolean addUser(User user);
+
+    int getUser_Id(User user);
 }
