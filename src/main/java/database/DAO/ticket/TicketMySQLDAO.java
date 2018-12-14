@@ -11,7 +11,7 @@ public class TicketMySQLDAO implements TicketDAO {
 
     Singleton singleton = Singleton.getInstance();
 
-    private static final String ADD_TICKET = "INSERT INTO Web_Site.Ticket (id_user,flightNumber,Airline,departure_at,return_at)" +
+    private static final String ADD_TICKET = "INSERT INTO Web_Site.Ticket (id_user,flightNumber,Airline,departureAt,returnAt,price)" +
             "VALUES ";
     private static final String FIND_TICKET = "SELECT * FROM Web_Site.Ticket WHERE ";
 
@@ -21,7 +21,7 @@ public class TicketMySQLDAO implements TicketDAO {
 
 
         StringBuilder query = new StringBuilder();
-        query.append(String.format("('%s','%s','%s','%s','%s');",ticket.getUser_id(),ticket.getFlightNumber(),ticket.getFlightNumber(),
+        query.append(String.format("('%s','%s','%s','%s','%s','%s');",ticket.getUser_id(),ticket.getFlightNumber(),ticket.getAirline(),
                 ticket.getDeparture_at(),ticket.getReturn_at(),ticket.getPrice()));
 
         try{

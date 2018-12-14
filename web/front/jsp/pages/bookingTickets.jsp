@@ -56,27 +56,33 @@
                         <div class="column">
                             <div class="column_2">
                                 <div class="column_4"><p>Авиакомпания:</p></div>
-                                <div class="column_4" name="airline"><p>${elem.airline}</p></div>
+                                <div class="column_4" name="airline"><p>${elem.airline}</p>
+                                    <input value=${elem.airline} hidden name="airline"></div>
                             </div>
                             <div class="column_2">
                                 <div class="column_4"><p>Номер рейса:</p></div>
-                                <div class="column_4" name="flightNumber"><p>${elem.flightNumber}</p></div>
+                                <div class="column_4"><p>${elem.flightNumber}</p>
+                                    <input value=${elem.flightNumber} hidden name="flightNumber">
+                                </div>
                             </div>
                         </div>
                         <div class="column">
                             <div class="column_2">
                                 <div class="column_4"><p>Дата полёта:</p></div>
-                                <div class="column_4" name="departure_at"><p>${elem.departure_at}</p></div>
+                                <div class="column_4-4"><p>${elem.departure_at}</p>
+                                    <input value=${elem.departure_at} hidden name="departure_at"></div>
                             </div>
                             <div class="column_2">
                                 <div class="column_4"><p>Дата возвращения:</p></div>
-                                <div class="column_4" name="return_at"><p>${elem.return_at}</p></div>
+                                <div class="column_4-4"><p>${elem.return_at}</p>
+                                    <input value=${elem.return_at} hidden name="return_at"></div>
                             </div>
                         </div>
                         <div class="column">
                             <div class="column_price">
                                 <div class="column_4"><p>Цена:</p></div>
-                                <div class="column_4" name="price"><p>${elem.price}</p></div>
+                                <div class="column_4"><p>${elem.price}</p>
+                                    <input value=${elem.price} hidden name="price"></div>
                             </div>
                         </div>
                         <div class="column">

@@ -104,6 +104,7 @@ public class UserMySQLDAO implements UserDAO {
     }
 
     public int getUser_Id(User user){
+        int id = -1;
         StringBuilder query = new StringBuilder();
         query.append(String.format("email='%s' AND password='%s';", user.getEmail(), user.getPassword()));
 
@@ -112,11 +113,13 @@ public class UserMySQLDAO implements UserDAO {
             PreparedStatement preparedStatement = connection.prepareStatement(GET_USERS_ID + query);
             ResultSet resultSet = preparedStatement.executeQuery();
 
-            return Integer.parseInt(resultSet.getString("id_user"));
-
+            while(resultSet.next()) {
+                id = resultSet.getInt("id");
+            }
         }catch (SQLException e){
             e.printStackTrace();
             return -1;
         }
+        return id;
     }
 }
