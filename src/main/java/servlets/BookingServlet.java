@@ -24,7 +24,12 @@ public class BookingServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         TicketDAO ticketDAO = new TicketMySQLDAO();
-        ticketDAO.addTicket(fillTicket(req,resp));
+        HttpSession httpSession = req.getSession();
+        Ticket ticket = fillTicket(req,resp);
+
+        ticketDAO.addTicket(ticket);
+        httpSession.setAttribute("tickets",ticketDAO.getTickets(ticket.getUser_id()));
+        req.getRequestDispatcher("/front/jsp/pages/ownRoom.jsp").forward(req,resp);
 
     }
 
@@ -37,12 +42,13 @@ public class BookingServlet extends HttpServlet {
             UserDAO userDAO = new UserMySQLDAO();
 
             ticket.setAirline(req.getParameter("airline"));
-            ticket.setFlightNumber(Double.parseDouble(req.getParameter("flightNumber")));
+            ticket.setFlightNumber(Integer.parseInt(req.getParameter("flightNumber")));
             ticket.setDeparture_at(req.getParameter("departure_at"));
             ticket.setReturn_at(req.getParameter("return_at"));
             ticket.setPrice(Double.parseDouble(req.getParameter("price")));
             ticket.setUser_id(userDAO.getUser_Id((User) session.getAttribute("user")));
 
+            System.out.println(ticket.toString());
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (PropertyVetoException ex) {

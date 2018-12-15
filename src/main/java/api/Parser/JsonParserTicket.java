@@ -56,7 +56,7 @@ public class JsonParserTicket implements JsonParser {
                 String departure_at = (String) array.get("departure_at");
                 String return_at = (String) array.get("return_at");
 
-                tickets.add(new Ticket(flightNumber,airline,separate(departure_at),separate(return_at),Double.valueOf(price)));
+                tickets.add(new Ticket(flightNumber.intValue(),airline,separate(departure_at),separate(return_at),Double.valueOf(price)));
 
                 array = (JSONObject) city.get(Integer.toString(count));
             }

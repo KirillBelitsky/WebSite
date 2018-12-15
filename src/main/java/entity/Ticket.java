@@ -3,13 +3,13 @@ package entity;
 public class Ticket {
 
     private double price;
-    private double flightNumber;
+    private int flightNumber;
     private String airline;
     private String departure_at;
     private String return_at;
     private int user_id;
 
-    public Ticket(int id_user, double flightNumber, String airline, String departure_at, String return_at, double price) {
+    public Ticket(int id_user, int flightNumber, String airline, String departure_at, String return_at, double price) {
         this.price = price;
         this.flightNumber = flightNumber;
         this.airline = airline;
@@ -21,7 +21,7 @@ public class Ticket {
     public Ticket() {
     }
 
-    public Ticket(double flightNumber, String airline, String departure_at, String return_at,double price) {
+    public Ticket(int flightNumber, String airline, String departure_at, String return_at,double price) {
         this.price = price;
         this.flightNumber = flightNumber;
         this.airline = airline;
@@ -37,11 +37,11 @@ public class Ticket {
         this.price = price;
     }
 
-    public double getFlightNumber() {
+    public int getFlightNumber() {
         return flightNumber;
     }
 
-    public void setFlightNumber(double flightNumber) {
+    public void setFlightNumber(int flightNumber) {
         this.flightNumber = flightNumber;
     }
 

@@ -35,9 +35,9 @@ public class LogInServlet extends HttpServlet {
             if(userDAO.findUserTrue(user)){
 
                 httpSession.setAttribute("user",userDAO.findUser(user));
-                req.setAttribute("phone",userDAO.findUser(user).getPhone());
-                req.setAttribute("email",userDAO.findUser(user).getEmail());
-                req.setAttribute("country",userDAO.findUser(user).getCity());
+                httpSession.setAttribute("phone","+375"+userDAO.findUser(user).getPhone());
+                httpSession.setAttribute("email",userDAO.findUser(user).getEmail());
+                httpSession.setAttribute("country",userDAO.findUser(user).getCity());
                 httpSession.setAttribute("name",userDAO.findUser(user).getFirstName());
                 System.out.println(req.getParameter("url"));
 

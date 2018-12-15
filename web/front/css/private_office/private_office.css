@@ -2,12 +2,17 @@ a {
 	text-decoration: none;
 }
 
+body{
+	margin: 0px;
+}
+
 .headers{
 	display: flex;
-	padding: 10px;
+	padding: 5px;
+	padding-right: 0px;
 	background-color: #fff;
 	height: 2em;
-	width: 95%;
+	width: 100%;
 	justify-content: space-between;
 }
 
@@ -15,7 +20,7 @@ a {
 	width: 95%;
 	margin-left: 25px;
 	margin-right: 25px;
-	}
+}
 
 .container div{
 	display: inline-block;
@@ -61,46 +66,51 @@ a {
 	color:#FF8000;
 }
 
-.content {
-	padding-bottom: 100px;
-    padding-left: 32px;
-    padding-right: 32px;
-    padding-top: 65px;
-    max-width: 936px;
-    margin: 0 auto;
-    position: relative;
-    width: 936px;
+.content{
+	margin: 0px;
+	height: auto;
+	max-width: 100%;
+	background-color: #e9faff;
+}
+
+.content .content_inside{
+	padding-bottom: 70px;
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 65px;
+	max-width: 936px;
+	height: auto;
+	margin: 0 auto;
+	position: relative;
+	width: auto;
+
+	/*! max-height: 100em; */
 }
 
 .content .header_content{
-	margin-bottom: 25px;
+	padding-top: 50px;
+	margin-bottom: 5px;
 	text-transform: uppercase;
 	color: #383838;
 	font-size: 30px;
-	line-height: 30px;
+	line-height: 1px;
 	font-family: 'Prompt', sans-serif;
 	font-weight: normal;
 	letter-spacing: -2px;
-}
-
-.content .content_inside {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font: inherit;
-    font-size: inherit;
-	font-size: 100%;
-	vertical-align: baseline;
+	text-align: center;
+	margin-right: 50px;
 }
 
 .content .content_inside .personal_info {
 	border: 1px rgba(120,120,120,0.2) solid;
 	box-shadow: 0 0 2px #ffffff inset;
 	background-color: rgba(255,255,255,0.2);
-	-webkit-border-radius: 2px;
+	-webkit-border-radius: 3px;
 	-moz-border-radius: 2px;
-	border-radius: 2px;
-	width: 934px;
+	border-radius: 4px;
+	width: auto;
+	margin-bottom: 50px;
+	background-color: #F5F5DC;
 }
 
 .content .content_inside .personal_info .personal_info_left {
@@ -122,7 +132,7 @@ table {
 	padding: 0;
 	border: 0;
 	font: inherit;
-    font-size: inherit;
+	font-size: inherit;
 	font-size: 100%;
 	vertical-align: baseline;
 }
@@ -138,4 +148,83 @@ table {
 	border-top: none;
 	padding: 11px 20px 11px 0;
 	text-align: center;
+}
+
+
+.content .content_inside .personal_info_about_tickets .head{
+	padding-top: 5px;
+	text-align: center;
+	font-size:30px;
+	letter-spacing: -1px;
+	line-height: 1px;
+	font-family: 'Prompt', sans-serif;
+	color: #383838;
+	font-weight: normal;
+}
+.content .content_inside .personal_info_about_tickets{
+	margin-bottom: 10px;
+}
+
+.content .content_inside .personal_info_about_tickets .ticket{
+	margin-bottom: 5px;
+	padding-left: 5px;
+	padding-right: 5px;
+	border: 2px solid;
+	border-radius: 10px;
+	background-color: #F5F5DC;
+
+}
+
+.ticket .row{
+	display: flex;
+	padding: 5px 5px 5px 5px;
+	width: auto;
+	justify-content: space-around;
+}
+
+.ticket .row .column{
+	margin-left: 0px;
+	margin-right: 0px;
+	width: auto;
+}
+.ticket .row .column:last-child{
+	padding-right: 5px;
+}
+
+.ticket .row .column .column_2{
+	margin-top: 15px;
+	display: flex;
+	justify-content:space-between;
+	width: auto;
+}
+
+.ticket .column .column_2 .column_4-4{
+	text-align: left;
+	width: auto;
+}
+
+.ticket .row .column .column_price{
+	display: flex;
+	padding-top: 15px;
+	width: auto;
+}
+
+.ticket .row .column .column_button{
+	padding-top: 23px;
+	width: auto;
+}
+
+.ticket .row .column .column_button .form_submit{
+	background-color:#e9faf6;
+	border-radius: 8px;
+	border :1px solid;
+	font-size: 18px;
+	height: 70px;
+	max-width: 120px;
+	width: auto;
+	transition:background .7s;
+	cursor:pointer;
+}
+.ticket .row .column .column_button .form_submit:hover{
+	background-color: #A6CAF0;
 }
