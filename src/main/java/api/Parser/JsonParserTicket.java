@@ -23,17 +23,18 @@ public class JsonParserTicket implements JsonParser {
 
     private int count=0;
 
-    public Result parse(String ... temp) {
+    public ArrayList<?> parse(String ... temp) {
 
         ArrayList<Ticket> tickets = new ArrayList<>();
 
-        ArrayList<?> iata = new JsonParserIataCity().parse(temp[0],temp[1]).getList();
+        ArrayList<?> iata = new JsonParserIataCity().parse(temp[0],temp[1]);
+        if(iata == null)
+            return null;
 
         try {
             StringBuilder sb = new StringBuilder();
             sb.append(String.format("origin=%s&destination=%s&depart_date=%s&return_date=%s&currency=USD&" + TOKEN,iata.get(0),iata.get(1),temp[2],temp[3]));
 
-            System.out.println(FIND_TICKETS + sb);
 
             URL url = new URL(FIND_TICKETS + sb);
             String resp = JsonParser.converteStreamToString(new BufferedReader(new InputStreamReader(url.openStream())));
@@ -43,7 +44,7 @@ public class JsonParserTicket implements JsonParser {
             JSONObject city= (JSONObject) data.get(iata.get(1));
 
             if(city == null)
-                return new Result(null);
+                return null;
 
             JSONObject array =(JSONObject) city.get(Integer.toString(count));
 
@@ -68,7 +69,7 @@ public class JsonParserTicket implements JsonParser {
             return null;
         }catch (IOException e){return null;}
 
-        return new Result(tickets);
+        return tickets;
     }
 
     private String separate(String temp){

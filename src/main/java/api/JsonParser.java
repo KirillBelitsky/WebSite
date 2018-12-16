@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public interface JsonParser {
 
-    Result parse(String ... strings);
+    ArrayList<?> parse(String ... strings);
 
     static String converteStreamToString(BufferedReader is){
         BufferedReader reader = is;

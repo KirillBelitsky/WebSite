@@ -97,7 +97,9 @@
         </c:forEach>
         <%}%>
         <%if ((session.getAttribute("tickets") == null)) {%>
-        <jsp:text>Билетов по данному запросу не найдено!</jsp:text>
+        <div class="title_booking">
+            <h2 style="color: #fff3cd">По вашему запросу ничего не найдено!</h2>
+        </div>
         <%}%>
     </div>
 </div>

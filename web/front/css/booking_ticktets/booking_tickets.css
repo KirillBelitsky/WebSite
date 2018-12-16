@@ -81,6 +81,7 @@ input[type=text]{
     height: auto;
     background-color: #05263f;
     padding-bottom:5px;
+    min-height: 55.9em;
 }
 
 .main .contr{
@@ -94,6 +95,7 @@ input[type=text]{
 .main .contr .title_booking{
     padding-top: 20px;
     text-align: center;
+    letter-spacing: 1px;
 }
 
 .main .contr .form_ticket{

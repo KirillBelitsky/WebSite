@@ -4,6 +4,9 @@ a {
 
 body{
 	margin: 0px;
+	font-family: 'Prompt', sans-serif;
+	color: #383838;
+	letter-spacing: -1px;
 }
 
 .headers{
@@ -71,6 +74,7 @@ body{
 	height: auto;
 	max-width: 100%;
 	background-color: #e9faff;
+	min-height: 55.5em;
 }
 
 .content .content_inside{
@@ -103,7 +107,7 @@ body{
 
 .content .content_inside .personal_info {
 	border: 1px rgba(120,120,120,0.2) solid;
-	box-shadow: 0 0 2px #ffffff inset;
+	/*! box-shadow: 0 0 2px #ffffff inset; */
 	background-color: rgba(255,255,255,0.2);
 	-webkit-border-radius: 3px;
 	-moz-border-radius: 2px;
@@ -125,6 +129,12 @@ body{
 table {
 	border-spacing: 0px;
 	border-collapse: collapse;
+	/*! border: 1px; */
+	margin: 5px;
+	width: -moz-available;
+	/*! display: flex; */
+	/*! justify-content: space-around; */
+	font-size: 18px;
 }
 
 .content .content_inside .personal_info .personal_info_left .personal_info_list .personal_info_list_row {
@@ -139,8 +149,8 @@ table {
 
 .content .content_inside .personal_info .personal_info_left .personal_info_list .personal_info_list_row .personal-info-list_cell_personal-info-list_cell__key {
 	border-top: none;
-	width: 138px;
 	padding: 11px 20px 11px 0;
+	text-align: center;
 
 }
 

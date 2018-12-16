@@ -89,7 +89,7 @@ public class UserMySQLDAO implements UserDAO {
         StringBuilder query = new StringBuilder();
 
         query.append(String.format("('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s');",
-                user.getSex(), user.getFirstName(), user.getSecondName(), user.getPassword(),user.getPhone(),
+                user.getSex(), user.getFirstName(), user.getSecondName(), user.getPassword(),"+375"+user.getPhone(),
                 user.getEmail(), user.getPassport(), user.getCity(), user.getPostIndex(), user.getAdress(), user.getDate()));
 
         try{

@@ -11,4 +11,6 @@ public interface TicketDAO {
     boolean findTicket(Ticket ticket);
 
     ArrayList<Ticket> getTickets(int id);
+
+    boolean removeTicket(Ticket ticket);
 }

@@ -1,5 +1,7 @@
 package servlets;
 
+import database.DAO.ticket.TicketDAO;
+import database.DAO.ticket.TicketMySQLDAO;
 import database.DAO.user.UserDAO;
 import database.DAO.user.UserMySQLDAO;
 import entity.User;
@@ -22,6 +24,7 @@ public class LogInServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         HttpSession httpSession = req.getSession();
+        TicketDAO ticketDAO = new TicketMySQLDAO();
 
         User user = new User();
         String email = req.getParameter("email");
@@ -35,14 +38,12 @@ public class LogInServlet extends HttpServlet {
             if(userDAO.findUserTrue(user)){
 
                 httpSession.setAttribute("user",userDAO.findUser(user));
-                httpSession.setAttribute("phone","+375"+userDAO.findUser(user).getPhone());
+                httpSession.setAttribute("phone",userDAO.findUser(user).getPhone());
                 httpSession.setAttribute("email",userDAO.findUser(user).getEmail());
                 httpSession.setAttribute("country",userDAO.findUser(user).getCity());
                 httpSession.setAttribute("name",userDAO.findUser(user).getFirstName());
-                System.out.println(req.getParameter("url"));
+                httpSession.setAttribute("tickets",ticketDAO.getTickets(userDAO.getUser_Id(user)));
 
-                if(req.getParameter("url")!=null)
-                    resp.sendRedirect(req.getParameter("url"));
 
                 resp.sendRedirect("/index.jsp");
             }

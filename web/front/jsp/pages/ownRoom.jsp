@@ -61,7 +61,7 @@
             </div>
             <div class="tickets">
                 <c:forEach var="elem" items="${tickets}">
-                    <form>
+                    <form method="post" action="/RemoveTicketServlet">
                         <div class="ticket">
                             <div class="row">
                                 <div class="column">
@@ -98,7 +98,7 @@
                                 </div>
                                 <div class="column">
                                     <div class="column_button">
-                                        <input type="submit" value="Заказать" class="form_submit">
+                                        <input type="submit" value="Отменить" class="form_submit">
                                     </div>
                                 </div>
                             </div>

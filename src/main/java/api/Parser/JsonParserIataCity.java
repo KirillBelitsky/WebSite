@@ -23,7 +23,7 @@ import static constants.Constants.FIND_IATA;
 public class JsonParserIataCity implements JsonParser {
 
 
-    public Result parse(String ... strings){
+    public ArrayList<?> parse(String ... strings){
         ArrayList<String> city = new ArrayList<>();
 
         String cityOne = strings[0];
@@ -47,6 +47,9 @@ public class JsonParserIataCity implements JsonParser {
             JSONObject jo = (JSONObject) new JSONParser().parse(resp);
 
             JSONObject origin = (JSONObject) jo.get("origin");
+            if( origin == null)
+                return null;
+
             String from = (String) origin.get("iata");
 
             JSONObject destination = (JSONObject) jo.get("destination");
@@ -55,7 +58,7 @@ public class JsonParserIataCity implements JsonParser {
             city.add(from);
             city.add(to);
 
-            return new Result(city);
+            return city;
         }catch (MalformedURLException e){
             e.printStackTrace();
             return null;

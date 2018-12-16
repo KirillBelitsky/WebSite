@@ -94,7 +94,7 @@
                 <div class="footer-column">
                     <div class="footer_feadback">
                         <p class="footer_feadback_svyaz">Если хотите с нами связться,напишите нам</p>
-                        <form class="footer_form" method="post" action="/MyServlet">
+                        <form class="footer_form" method="post" action="/FeedbackServlet">
                             <div class="footer-form-group">
                                 <input type="email" class="footer_form_email" name="footer_form_email"
                                        placeholder="Email">

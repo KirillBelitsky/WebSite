@@ -16,6 +16,7 @@ public class TicketMySQLDAO implements TicketDAO {
             "VALUES ";
     private static final String FIND_TICKET = "SELECT * FROM Web_Site.Ticket WHERE ";
     private static final String GET_TICKETS = "SELECT * FROM Web_Site.Ticket WHERE ";
+    private static final String REMOVE_TICKET = "DELETE FROM Web_Site.Ticket WHERE ";
 
 
     @Override
@@ -28,16 +29,7 @@ public class TicketMySQLDAO implements TicketDAO {
 
         if (findTicket(ticket))
             return false;
-
-        try {
-            Connection connection = singleton.getConnection();
-            PreparedStatement statement = connection.prepareStatement(ADD_TICKET + query);
-
-            return statement.execute();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
-        }
+        return process(ADD_TICKET + query);
     }
 
     @Override
@@ -59,6 +51,15 @@ public class TicketMySQLDAO implements TicketDAO {
             return false;
         }
         return false;
+    }
+
+    @Override
+    public boolean removeTicket(Ticket ticket){
+        StringBuilder query = new StringBuilder();
+        query.append(String.format("Airline='%s' AND flightNumber='%s' AND price='%s' AND departureAt='%s' AND returnAt='%s';",
+                ticket.getAirline(),ticket.getFlightNumber(),ticket.getPrice(),ticket.getDeparture_at(),ticket.getReturn_at()));
+
+        return process(REMOVE_TICKET + query);
     }
 
     @Override
@@ -86,6 +87,18 @@ public class TicketMySQLDAO implements TicketDAO {
         }catch (SQLException e){
             e.printStackTrace();
             return null;
+        }
+    }
+
+    private boolean process(String query){
+        try{
+            Connection connection = singleton.getConnection();
+            PreparedStatement statement = connection.prepareStatement(query);
+
+            return statement.execute();
+        }catch (SQLException e){
+            e.printStackTrace();
+            return false;
         }
     }
 }

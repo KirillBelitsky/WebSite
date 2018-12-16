@@ -261,16 +261,16 @@ input[type=text]{
 
 /* поле отзыва в футере */
 .container-footer .row .footer-column .footer_feadback .footer_form_email {
-	height:50px;
-	width:200%;
-	border-radius:3px;
-	border:rgba(0,0,0,.3) 2px solid;
-	box-sizing:border-box;
+	height: 50px;
+	border-radius: 3px;
+	border: rgba(0,0,0,.3) 2px solid;
+	box-sizing: border-box;
 	font-family: 'Open Sans', sans-serif;
-	font-size:18px;
-	padding:10px;
+	font-size: 18px;
+	padding: 10px;
 	background: rgba(255, 255, 255, 0.4);
-	margin-bottom:30px;
+	margin-bottom: 30px;
+	width: 532px;
 }
 
 .container-footer .row .footer-column .footer_feadback .footer_form_text{

@@ -27,17 +27,15 @@ public class MyServlet extends HttpServlet {
 
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        HttpSession session = request.getSession();
+
         String cityFrom = request.getParameter("city_from");
         String cityTo =  request.getParameter("city_to");
         String departure_at = request.getParameter("departure_at");
         String return_at =request.getParameter("return_at");
 
+        ArrayList<?> tickets = new JsonParserTicket().parse(cityFrom,cityTo,departure_at,return_at);
 
-        ArrayList<?> tickets = new JsonParserTicket().parse(cityFrom,cityTo,departure_at,return_at).getList();
-        if(tickets!=null)
-            System.out.println(tickets.toString());
-
-        HttpSession session = request.getSession();
         session.setAttribute("tickets",tickets);
 
         request.getRequestDispatcher("front/jsp/pages/bookingTickets.jsp").forward(request,response);
