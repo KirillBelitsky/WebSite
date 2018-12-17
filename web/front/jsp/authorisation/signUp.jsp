@@ -10,7 +10,7 @@
 <head>
     <title>Регистрация</title>
     <link rel="stylesheet" type="text/css" href="/front/css/signUp/sign_up.css">
-    <meta name="keywords" content="билеты на самолет, авиабилеты,регистрация" >
+    <meta name="keywords" content="билеты на самолет, авиабилеты,регистрация">
 </head>
 <body>
 <header>
@@ -24,8 +24,7 @@
             </div>
             <div class="panel">
                 <ul class="top_menu">
-                    <li><a class="top-menu-item" href="/front/jsp/autorisation/logIn.jsp">Войти</a></li>
-                    <li><a href="#footers">О нас</a></li>
+                    <li><a class="top-menu-item" href="/front/jsp/authorisation/logIn.jsp">Войти</a></li>
                 </ul>
             </div>
         </div>
@@ -34,7 +33,10 @@
 <div class="containers">
     <div class="containers_content">
         <h1>Регистрация</h1>
-        <div class="first_text">Обращаем Ваше внимание на необходимость заполнения регистрационной анкеты в точном соответствии с паспортными данными. При изменении паспортных данных просим Вас известить об этом незамедлительно. </div>
+        <div class="first_text">Обращаем Ваше внимание на необходимость заполнения регистрационной анкеты в точном
+            соответствии с паспортными данными. При изменении паспортных данных просим Вас известить об этом
+            незамедлительно.
+        </div>
         <div id="registration">
             <form method="post" action="/SignUpServlet" class="registration_verical">
                 <div class="panel_form_group">
@@ -52,20 +54,21 @@
                     <div class="col_group">
                         <div class="col_group-mb-12">
                             <div class="wrapper">
-                                <input type="text" class="input_data" name="secondName" autocomplete="off" required="true" placeholder="Фамилия" style="color: #555">
+                                <input type="text" class="input_data" name="secondName" autocomplete="off"
+                                       required="true" placeholder="Фамилия" style="color: #555">
                             </div>
                             <p class="text_details">Латинскими буквами,как в паспорте</p>
                         </div>
                         <div class="col_group-mb-12">
                             <div class="wrapper">
-                                <input type="text" class="input_data" name="firstName" autocomplete="off" required="true" placeholder="Имя" style="color: #555">
+                                <input type="text" class="input_data" name="firstName" autocomplete="off"
+                                       required="true" placeholder="Имя" style="color: #555">
                             </div>
                             <p class="text_details">Латинскими буквами,как в паспорте</p>
                         </div>
                         <div class="col_group-mb-12">
                             <div class="wrapper">
-                                <input type="date" name="datetime" autocomplete="off" class="date" placeholder=" " style="color: #555">
-
+                                <input type="date" name="datetime" autocomplete="off" class="data" placeholder=" ">
                             </div>
                         </div>
                     </div>
@@ -77,7 +80,8 @@
                     <div class="col_group">
                         <div class="col_group-mb-12">
                             <div class="wrapper ui-link dropdown">
-                                <input type="text" class="input_data" name="passport" autocomplete="off"  placeholder="Серия и номер паспорта" style="color: #555">
+                                <input type="text" class="input_data" name="passport" autocomplete="off"
+                                       placeholder="Серия и номер паспорта" style="color: #555">
                             </div>
                         </div>
                     </div>
@@ -90,45 +94,33 @@
                     <div class="col_group">
                         <div class="col_group-mb-12">
                             <div class="wrapper ui-link dropdown">
-                                <input type="text" class="input_data" name="codePhone" autocomplete="off"  disabled="disabled" value="(+375) Belarus" style="background-color: #fff" style="color: #555">
+                                <input type="text" class="input_data" name="numberPhone" autocomplete="off"
+                                       placeholder="Номер телефона" style="color: #555">
                             </div>
                         </div>
                         <div class="col_group-mb-12">
                             <div class="wrapper ui-link dropdown">
-                                <input type="text" class="input_data" name="numberPhone" autocomplete="off"  placeholder="Номер телефона" style="color: #555">
-                            </div>
-                        </div>
-                        <div class="col_group-mb-12">
-                            <div class="wrapper ui-link dropdown">
-                                <input type="Email" class="input_data" name="email" autocomplete="off" placeholder="Email" style="color: #555">
+                                <input type="Email" class="input_data" name="email" autocomplete="off"
+                                       placeholder="Email" style="color: #555">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="panel_form_group">
                     <div class="panel_form_group_data">
-                        <div
-                                class="data"><strong>Адрес</strong></div>
+                        <div class="data"><strong>Адрес</strong></div>
                     </div>
                     <div class="col_group">
                         <div class="col_group-mb-12">
                             <div class="wrapper ui-link dropdown">
-                                <input type="text" class="input_data" name="country" autocomplete="off" required="false" disabled="disabled" value="Belarus" style="background-color: #fff" style="color: #555">
+                                <input type="text" class="input_data" name="city" autocomplete="off" placeholder="Город"
+                                       style="color: #555">
                             </div>
                         </div>
                         <div class="col_group-mb-12">
                             <div class="wrapper ui-link dropdown">
-                                <input type="text" class="input_data" name="city" autocomplete="off" placeholder="Город" style="color: #555">
-                            </div>
-                        </div>
-                        <div class="col_group-mb-12">
-                            <div class="wrapper ui-link dropdown">
-                                <input type="text" min="1" max="4" class="input_data" name="indexCity" autocomplete="off" placeholder="Почтовый индекс" style="color: #555">
-                            </div>
-                        </div>
-                        <div class="col_group-mb-12">
-                            <div class="wrapper ui-link dropdown">
-                                <textarea class="data_about_adress" autocomplete="off" name="adress" placeholder="Адрес" style="color: #555" rows="4" cols="25"></textarea>
+                                <textarea class="data_about_adress" autocomplete="off" name="adress" placeholder="Адрес"
+                                          style="color: #555" rows="4" cols="25"></textarea>
                             </div>
                         </div>
                     </div>
@@ -140,7 +132,9 @@
                     <div class="col_group">
                         <div class="col_group-mb-12">
                             <div class="wrapper ui-link dropdown">
-                                <input type="password" class="input_data" name="password" autocomplete="off" required="true" placeholder="Введите пароль" style="background-color: #fff" style="color: #555">
+                                <input type="password" minlength="6" maxlength="20" class="input_data" name="password" autocomplete="off"
+                                       required="true" placeholder="Введите пароль" style="color: #555"
+                                       style="color: #555">
                             </div>
                         </div>
                     </div>

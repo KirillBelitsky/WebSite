@@ -17,10 +17,6 @@ import java.util.ArrayList;
 
 @WebServlet(name="SignUpServlet",urlPatterns = "/SignUpServlet")
 public class SignUpServlet extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        processRequest(req,resp);
-    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
@@ -49,8 +45,7 @@ public class SignUpServlet extends HttpServlet {
 
         User user = new User(request.getParameter("sex"),request.getParameter("firstName"),
                 request.getParameter("secondName"), request.getParameter("password"),request.getParameter("numberPhone"),
-                request.getParameter("email"),request.getParameter("passport"),request.getParameter("city"),
-                request.getParameter("indexCity"),request.getParameter("adress"),request.getParameter("datetime"));
+                request.getParameter("email"),request.getParameter("passport"),request.getParameter("city"), request.getParameter("adress"),request.getParameter("datetime"));
 
         return user;
     }

@@ -37,6 +37,7 @@ public class MyServlet extends HttpServlet {
         ArrayList<?> tickets = new JsonParserTicket().parse(cityFrom,cityTo,departure_at,return_at);
 
         session.setAttribute("tickets",tickets);
+        session.setAttribute("url","/front/jsp/pages/bookingTickets.jsp");
 
         request.getRequestDispatcher("front/jsp/pages/bookingTickets.jsp").forward(request,response);
     }

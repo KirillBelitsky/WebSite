@@ -44,8 +44,9 @@ public class LogInServlet extends HttpServlet {
                 httpSession.setAttribute("name",userDAO.findUser(user).getFirstName());
                 httpSession.setAttribute("tickets",ticketDAO.getTickets(userDAO.getUser_Id(user)));
 
-
-                resp.sendRedirect("/index.jsp");
+                if(httpSession.getAttribute("url")!=null)
+                    req.getRequestDispatcher((String) httpSession.getAttribute("url")).forward(req,resp);
+                req.getRequestDispatcher("/index.jsp").forward(req,resp);
             }
             else {
                 resp.sendRedirect("/front/jsp/authorisation/logIn.jsp");

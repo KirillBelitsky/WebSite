@@ -12,9 +12,8 @@
     <link rel="SHORTCUT ICON" href="front/images/icon.ico">
     <meta charset="utf-8">
     <meta name="keywords" content="билеты на самолет, авиабилеты,заказ билетов онлайн">
-    <link rel="stylesheet" href="https://unpkg.com/ngx-bootstrap/datepicker/bs-datepicker.css">
     <link rel="stylesheet" href="front/css/site_style.css">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" rel="stylesheet">
+
     <title>Site</title>
 </head>
 <body>
@@ -61,7 +60,7 @@
                         <input type="date" name="departure_at" class="input_style_time" required="true">
                     </div>
                     <div class="avia_time_field">
-                        <input type="date" name="return_at" class="input_style_time">
+                       <input class="input_style_time" type="date" name="return_at">
                     </div>
                 </div>
             </div>
@@ -110,5 +109,13 @@
         </div>
     </div>
 </footer>
+<!--<script>
+    const Calender = document.querySelector('.datepicker');
+    M.Datepicker.init(Calender,{
+        format:'dd-mm-yy',
+        showClearBtn:true,
+
+    })
+</script>-->
 </body>
 </html>

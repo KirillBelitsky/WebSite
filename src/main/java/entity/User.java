@@ -12,15 +12,13 @@ public class User {
     private String password;
     private String email;
     private String passport;
-    private String gender;
     private String city;
-    private String postIndex;
     private String adress;
 
     public User(){}
 
     public User(int id,String sex,String firstName,String secondName,String password,
-     String phoneNumber,String email,String passport,String city,String index,String adress,String datetime){
+     String phoneNumber,String email,String passport,String city,String adress,String datetime){
         this.id=id;
         this.firstName = firstName;
         this.secondName = secondName;
@@ -29,14 +27,13 @@ public class User {
         this.sex=sex;
         this.password=password;
         this.passport=passport;
-        this.postIndex=index;
         //this.date=datetime;
         this.email=email;
         this.phone=phoneNumber;
         this.adress=adress;
     }
     public User(String sex,String firstName,String secondName,String password,
-                String phoneNumber,String email,String passport,String city,String index,String adress,String datetime){
+                String phoneNumber,String email,String passport,String city,String adress,String datetime){
         this.firstName = firstName;
         this.secondName = secondName;
         this.city = city;
@@ -44,7 +41,6 @@ public class User {
         this.sex=sex;
         this.password=password;
         this.passport=passport;
-        this.postIndex=index;
         //this.date=datetime;
         this.email=email;
         this.phone=phoneNumber;
@@ -123,28 +119,12 @@ public class User {
         this.passport = passport;
     }
 
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
-    }
-
     public String getCity() {
         return city;
     }
 
     public void setCity(String city) {
         this.city = city;
-    }
-
-    public String getPostIndex() {
-        return postIndex;
-    }
-
-    public void setPostIndex(String postIndex) {
-        this.postIndex = postIndex;
     }
 
     public String getAdress() {
@@ -167,9 +147,7 @@ public class User {
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", passport='" + passport + '\'' +
-                ", gender='" + gender + '\'' +
                 ", city='" + city + '\'' +
-                ", postIndex='" + postIndex + '\'' +
                 ", adress='" + adress + '\'' +
                 '}';
     }

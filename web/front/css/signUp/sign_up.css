@@ -13,25 +13,31 @@ body {
 	padding: 10px;
 	background-color: #fff;
 	height: 2em;
-	width: 95%;
+	max-width: 100%;
 	justify-content: space-between;
+	width: auto;
 }
 
 .headers .container {
-	width: 95%;
-	margin-left: 25px;
-	margin-right: 25px;
-	}
+	/*! width: auto; */
+	padding-left: 15px;
+	padding-right: 15px;
+	display: flex;
+	justify-content: space-between;
+	min-width: 580px;
+	max-width: 6000px;
+	width: 100%;
+}
 
 .container div{
-	display: inline-block;
+	/*! display: inline-block; */
 
 }
 .container .logo {
-	float: left;
+	/*! float: left; */
 	font-size: 30px;
 	margin-top: 0px;
-	margin-left: 150px;
+	margin-left: 50px;
 }
 
 .container .logo a{
@@ -39,8 +45,12 @@ body {
 }
 
 .container .panel {
-	float: right;
-	margin-top: -10px;
+	/*! float: right; */
+}
+
+.container .top_menu{
+	padding-top: 5px;
+	margin:0px;
 }
 
 .container .panel .top_menu ul {
@@ -50,9 +60,9 @@ body {
 }
 .container .panel .top_menu li {
 	display: inline;
-	margin: 40px;
+	/*! margin: 40px; */
 	font-size: 20px;
-	margin-left: 40px;
+	margin-left: 25px;
 }
 
 .container .panel .top_menu li a{
@@ -60,13 +70,12 @@ body {
 }
 
 .container .panel .top_menu li:last-child {
-	margin-right: 100px;
+	padding-right: 20px;
 }
 
 .container .panel .top_menu li a:hover {
 	color:#FF8000;
 }
-
 
 
 h1 {
@@ -114,6 +123,7 @@ h1 {
 
 .containers .containers_content .panel_form_group .panel_form_group_data .data{
 	font-size: 18px;
+	padding-left: 12px;
 }
 
 
@@ -132,6 +142,13 @@ h1 {
 	line-height: normal;
 	font-weight: 400;
 	width: 344px;
+}
+
+.containers .containers_content .panel_form_group .col_group .col_group-mb-12 .dates{
+	color: #858585;
+	padding: 15px 4px 4px 10px;
+	font-size: 18px;
+	font-weight: 600;
 }
 
 .wrapper input::-webkit-input-placeholder{
@@ -155,15 +172,48 @@ h1 {
    color: #343434;
 }
 
+.wrapper .data{
+	color: #858585;
+	height: 50px;
+	width: 100%;
+}
+
+.wrapper .data:focus{
+	border:rgba(24,149,216,1) 2px solid;
+	color: #343434;
+}
+
 .containers .containers_content .panel_form_group .col_group .col_group-mb-12 .wrapper {
 	position: relative;
-	width: 300px;
+	width: 327px;
 }
 .wrapper input {
 	height:22px;
 	padding: 15px 4px 4px 10px;
     font-size: 18px;
     font-weight: 600;
+}
+
+.containers .containers_content .panel_form_group .col_group .col_group-mb-12 .data_about_adress{
+	background: rgba(255, 255, 255, 0.8);
+	width:100%;
+	height: 120px;
+	border:rgba(0,0,0,.3) 2px solid;
+	box-sizing:border-box;
+	-moz-border-radius: 3px;
+	font-size:18px;
+	font-family: 'Open Sans', sans-serif;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	display:block;
+	padding:10px;
+	margin-bottom:30px;
+	overflow:hidden;
+}
+
+.containers .containers_content .panel_form_group .col_group .col_group-mb-12 .data_about_adress:focus{
+	border:rgba(24,149,216,1) 2px solid;
+	color: #343434;
 }
 
 .containers .containers_content .panel_form_group .col_group .col_group-mb-12 .text_details {
@@ -194,6 +244,10 @@ h1 {
   font-size: 20px;
   transition:background .4s;
   cursor:pointer;
+}
+
+.containers .containers_content .button_register .panel_form_group_data #registr_button:hover{
+	background-color: #4caf50;
 }
 
 

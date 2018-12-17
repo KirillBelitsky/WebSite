@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(urlPatterns = "/front/jsp/pages/ownRoom.jsp")
+@WebFilter(urlPatterns = {"/front/jsp/pages/ownRoom.jsp","/front/jsp/pages/bookingTickets.jsp"},servletNames = {"MyServlet"})
 public class SecurityFilter implements Filter {
 
     @Override
@@ -22,8 +22,6 @@ public class SecurityFilter implements Filter {
         HttpSession session = req.getSession();
 
         if(session.getAttribute("user")==null){
-            req.setAttribute("url","/front/jsp/pages/ownRoom.jsp");
-
             RequestDispatcher dispatcher = request.getServletContext()
                     .getRequestDispatcher("/front/jsp/authorisation/logIn.jsp");
             dispatcher.forward(req,resp);

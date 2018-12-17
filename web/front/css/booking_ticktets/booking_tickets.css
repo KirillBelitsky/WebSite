@@ -17,30 +17,37 @@ input[type=text]{
     font-size: 20px;
 }
 
+
 .headers{
     display: flex;
     padding: 10px;
     background-color: #fff;
     height: 2em;
-    width: 95%;
+    max-width: 100%;
     justify-content: space-between;
+    width: auto;
 }
 
 .headers .container {
-    width: 95%;
-    margin-left: 25px;
-    margin-right: 25px;
+    /*! width: auto; */
+    padding-left: 15px;
+    padding-right: 15px;
+    display: flex;
+    justify-content: space-between;
+    min-width: 580px;
+    max-width: 6000px;
+    width: 100%;
 }
 
 .container div{
-    display: inline-block;
+    /*! display: inline-block; */
 
 }
 .container .logo {
-    float: left;
+    /*! float: left; */
     font-size: 30px;
     margin-top: 0px;
-    margin-left: 150px;
+    margin-left: 50px;
 }
 
 .container .logo a{
@@ -48,8 +55,12 @@ input[type=text]{
 }
 
 .container .panel {
-    float: right;
-    margin-top: -10px;
+    /*! float: right; */
+}
+
+.container .top_menu{
+    padding-top: 5px;
+    margin:0px;
 }
 
 .container .panel .top_menu ul {
@@ -59,9 +70,9 @@ input[type=text]{
 }
 .container .panel .top_menu li {
     display: inline;
-    margin: 40px;
+    /*! margin: 40px; */
     font-size: 20px;
-    margin-left: 40px;
+    margin-left: 25px;
 }
 
 .container .panel .top_menu li a{
@@ -69,102 +80,105 @@ input[type=text]{
 }
 
 .container .panel .top_menu li:last-child {
-    margin-right: 100px;
+    padding-right: 20px;
 }
 
 .container .panel .top_menu li a:hover {
     color:#FF8000;
 }
 
-.main{
-    width: 100%;
+.content{
+    margin: 0px;
     height: auto;
-    background-color: #05263f;
-    padding-bottom:5px;
-    min-height: 55.9em;
+    max-width: 100%;
+    background-color: #e9faff;
+    min-height: 55.5em;
 }
 
-.main .contr{
-    max-height: auto;
-    margin-right: 128px;
-    margin-left:128px;
+.content .content_inside{
+    padding-bottom: 70px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 65px;
+    max-width: 936px;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    width: auto;
+
+    /*! max-height: 100em; */
+}
+
+.content .content_inside .title_booking{
     padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-.main .contr .title_booking{
-    padding-top: 20px;
     text-align: center;
     letter-spacing: 1px;
 }
-
-.main .contr .form_ticket{
-    padding-right: 100px;
-    padding-left: 100px;
-}
-
-.main .contr .ticket{
-    display: flex;
+.content .content_inside .personal_info_about_tickets{
+    margin-bottom: 10px;
     padding-top: 10px;
-    padding-right: 30px;
-    padding-left: 30px;
-    border:solid;
-    border-radius:8px;
-    background: rgba(255,255,255, 0.2);
 }
 
-.main .contr .ticket .row{
-    display:inline-flex;
-    padding: 5px 5px 5px 5px;
-    width: 100%;
-    justify-content:space-around;
+.content .content_inside .personal_info_about_tickets .ticket{
+    margin-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 2px solid;
+    border-radius: 10px;
+    background-color: #f5f5dc;
+
 }
 
-
-.main .contr .ticket .row .column{
-    padding-top: 5px;
-    margin-left: 25px;
-    padding-bottom: 5px;
-    margin-right: 25px;
-    max-height: 200px;
-    max-width: 250px;
-    font-size: 18px;
-    font-family: 'Open Sans', sans-serif;
-}
-
-.main .contr .ticket .row .column .column_4-4{
-    text-align: right;
-}
-
-.main .contr .ticket .row .column:last-child{
-    width: 156px;
-}
-
-.main .contr .ticket .row .column .column_2, .column_price{
-    padding-bottom: 5px;
+.ticket .row{
     display: flex;
-}
-
-.main .contr .ticket .row .column .column_button{
-    text-align: center;
     padding: 5px 5px 5px 5px;
+    width: auto;
+    justify-content: space-around;
 }
 
-.main .contr .ticket .row .column .column_button .form_submit{
-    background-color: rgb(255,104,0);
-    width: 100%;
-    max-width:156%;
-    height: 80px;
-    border:rgb(255,104,0) 2px solid;
-    box-sizing:border-box;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background .4s;
+.ticket .row .column{
+    margin-left: 0px;
+    margin-right: 0px;
+    width: auto;
+}
+.ticket .row .column:last-child{
+    padding-right: 5px;
+}
+
+.ticket .row .column .column_2{
+    margin-top: 15px;
+    display: flex;
+    justify-content:space-between;
+    width: auto;
+}
+
+.ticket .column .column_2 .column_4-4{
+    text-align: left;
+    width: auto;
+}
+
+.ticket .row .column .column_price{
+    display: flex;
+    padding-top: 15px;
+    width: auto;
+}
+
+.ticket .row .column .column_button{
+    padding-top: 23px;
+    width: auto;
+}
+
+.ticket .row .column .column_button .form_submit{
+    background-color:#e9faf6;
+    border-radius: 8px;
+    border :1px solid;
     font-size: 18px;
-    margin-right: 5px;
-    margin-left: 5px;
+    height: 70px;
+    max-width: 120px;
+    width: auto;
+    transition:background .7s;
+    cursor:pointer;
 }
-
-.main .contr .ticket .row .column .column_button .form_submit:hover{
-    background-color: #D66F20;
+.ticket .row .column .column_button .form_submit:hover{
+    background-color: #A6CAF0;
 }

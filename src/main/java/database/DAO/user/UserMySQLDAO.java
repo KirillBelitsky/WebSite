@@ -13,7 +13,7 @@ public class UserMySQLDAO implements UserDAO {
     Singleton singleton = Singleton.getInstance();
 
     private static final String ADD_USER = "INSERT INTO Web_Site.Users (sex,firstName,secondName," +
-            "password,phoneNumber,email,numberPasport,city,cityIndex,adress,datetime) VALUES ";
+            "password,phoneNumber,email,numberPasport,city,adress,datetime) VALUES ";
     private static final String Find_User = "SELECT * FROM Web_Site.Users WHERE ";
     private static final String GET_USERS_ID = "SELECT * FROM Web_Site.Users WHERE ";
 
@@ -55,7 +55,7 @@ public class UserMySQLDAO implements UserDAO {
             while (result.next())
                 list.add(new User(result.getInt("id"), result.getString("sex"), result.getString("FirstName"), result.getString("SecondName"),
                         result.getString("password"), result.getString("phoneNumber"), result.getString("email"), result.getString("numberPasport"),
-                        result.getString("city"), result.getString("cityIndex"), result.getString("adress"), result.getString("datetime")));
+                        result.getString("city"),result.getString("adress"), result.getString("datetime")));
 
             return list.get(0);
         } catch (SQLException e) {
@@ -88,9 +88,9 @@ public class UserMySQLDAO implements UserDAO {
 
         StringBuilder query = new StringBuilder();
 
-        query.append(String.format("('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s','%s');",
-                user.getSex(), user.getFirstName(), user.getSecondName(), user.getPassword(),"+375"+user.getPhone(),
-                user.getEmail(), user.getPassport(), user.getCity(), user.getPostIndex(), user.getAdress(), user.getDate()));
+        query.append(String.format("('%s','%s','%s','%s','%s','%s','%s','%s','%s','%s');",
+                user.getSex(), user.getFirstName(), user.getSecondName(), user.getPassword(),user.getPhone(),
+                user.getEmail(), user.getPassport(), user.getCity(), user.getAdress(), user.getDate()));
 
         try{
             Connection connection = singleton.getConnection();
@@ -98,6 +98,7 @@ public class UserMySQLDAO implements UserDAO {
 
             return preparedStatement.execute();
         } catch (SQLException e) {
+            e.printStackTrace();
             System.out.println("User was not added!");
             return false;
         }

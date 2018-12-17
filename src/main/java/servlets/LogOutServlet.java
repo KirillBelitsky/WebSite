@@ -11,21 +11,14 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/LogOutServlet")
 public class LogOutServlet extends HttpServlet {
-    @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        processRequest(req, resp);
-    }
+
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-      processRequest(req,resp);
-    }
-
-    private void processRequest(HttpServletRequest request,HttpServletResponse response) throws ServletException,IOException{
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(false);
         if(session!=null)
             session.invalidate();
 
-        request.getRequestDispatcher("index.jsp").forward(request,response);
+        response.sendRedirect("index.jsp");
     }
 }

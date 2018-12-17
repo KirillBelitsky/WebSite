@@ -11,29 +11,34 @@ body{
 
 .headers{
 	display: flex;
-	padding: 5px;
-	padding-right: 0px;
+	padding: 10px;
 	background-color: #fff;
 	height: 2em;
-	width: 100%;
+	max-width: 100%;
 	justify-content: space-between;
+	width: auto;
 }
 
 .headers .container {
-	width: 95%;
-	margin-left: 25px;
-	margin-right: 25px;
+	/*! width: auto; */
+	padding-left: 15px;
+	padding-right: 15px;
+	display: flex;
+	justify-content: space-between;
+	min-width: 580px;
+	max-width: 6000px;
+	width: 100%;
 }
 
 .container div{
-	display: inline-block;
+	/*! display: inline-block; */
 
 }
 .container .logo {
-	float: left;
+	/*! float: left; */
 	font-size: 30px;
 	margin-top: 0px;
-	margin-left: 150px;
+	margin-left: 50px;
 }
 
 .container .logo a{
@@ -41,8 +46,12 @@ body{
 }
 
 .container .panel {
-	float: right;
-	margin-top: -10px;
+	/*! float: right; */
+}
+
+.container .top_menu{
+	padding-top: 5px;
+	margin:0px;
 }
 
 .container .panel .top_menu ul {
@@ -52,9 +61,9 @@ body{
 }
 .container .panel .top_menu li {
 	display: inline;
-	margin: 40px;
+	/*! margin: 40px; */
 	font-size: 20px;
-	margin-left: 40px;
+	margin-left: 25px;
 }
 
 .container .panel .top_menu li a{
@@ -62,12 +71,26 @@ body{
 }
 
 .container .panel .top_menu li:last-child {
-	margin-right: 100px;
+	padding-right: 20px;
 }
 
 .container .panel .top_menu li a:hover {
 	color:#FF8000;
 }
+
+.container .panel .top_menu button{
+	border: none;
+	font-size: 22px;
+	background-color: #fff;
+	color:#336BAB;
+	cursor: pointer;
+
+}
+
+.container .panel .top_menu button:hover{
+	color:#FF8000;;
+}
+
 
 .content{
 	margin: 0px;
@@ -181,7 +204,7 @@ table {
 	padding-right: 5px;
 	border: 2px solid;
 	border-radius: 10px;
-	background-color: #F5F5DC;
+	background-color: #f5f5dc;
 
 }
 

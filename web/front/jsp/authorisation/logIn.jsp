@@ -79,7 +79,7 @@
               Create an account?
             </span>
 
-                    <a href="signUp.jsp" class="txt2 hov1">
+                    <a href="/front/jsp/authorisation/signUp.jsp" class="txt2 hov1">
                         Sign up
                     </a>
                 </div>

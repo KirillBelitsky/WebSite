@@ -24,7 +24,9 @@
             </div>
             <div class="panel">
                 <ul class="top_menu">
-                    <li><a href="/index.jsp">Выйти</a></li>
+                    <form method="post" action="/LogOutServlet">
+                        <li><button type="submit">Выйти</button></li>
+                    </form>
                 </ul>
             </div>
         </div>
